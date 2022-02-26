@@ -4,17 +4,20 @@
     list-style-type: none;
     text-decoration: none;
 }
+html,body{
+    height:100%;
+    width:100%;
+}
 nav {
     height: 70px;
     background-color: #1d262d;
     color: #ffffff;
-    max-width: 100vw
+    width: 100%
 }
 nav ul {
     display: flex;
     justify-content: space-around;
 }
-nav ul a {}
 .logo img {
     width: 200px;
     height: 60px;
@@ -36,41 +39,43 @@ nav ul a {}
 main {
     display: flex;
     flex-direction: row;
-    max-width: 100vw;
-    min-height: 100vh;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    
 }
 .left_aside {
     display: flex;
+    margin:100px 40px;
+    width:60%;
 }
-.page_description {
-    max-width: 20vw;
-}
+
 .page_description h2 {
-    margin: 100px 0px 0px 30px;
     font-size: 2.5em;
     color: #0d3b66;
+    margin-bottom: 40px
 }
-.page_image {
-    max-width: 40vw;
-}
+
 .page_image img {
-    width: 100%;
-    object-fit: contain;
-    margin: 100px 0px 100px 90px
+    height: auto;
+    width:100%;
+    object-fit: cover;
+
+
 }
-.form_section {
-    max-width: 40vw;
-    ;
-}
+
 .form_section_container {
-    display: flex;
-    border: 2px solid #ffad05;
-    margin: 100px 0px 100px 110px;
-    border-radius: 7px;
-    height: 300px;
+   
+    margin:100px 40px;
+    overflow: hidden;
 }
 form {
-    padding: 40px
+     border: 2px solid #ffad05;
+    border-radius: 7px;
+    height: 200px;
+    width: 250px;
+    padding: 40px;
 }
 form>label, select, button {
     margin: 20px 0px 0px 0px
@@ -115,110 +120,111 @@ button {
     border: 2px solid red;
 }
 footer {
+    border-top: 4px solid red;
     background-color: #1d262d;
-    height: 100px;
+    min-height: 14vh;
     width: 100%;
     position: relative;
-    bottom: 0;
+    margin-top: -100px;
+    clear: both;
 }
 footer div p {
     text-align: center;
     padding: 40px;
     font-size: 1.5em;
-    color: #ffffff
+    color: #ffffff;
+
 }
-@media only screen and (max-width: 1250px) {
-    .page_description h2 {
-        font-size: 2em;
+@media only screen and (max-width:1200px) {
+    .page_description h2{
+        font-size:2em;
     }
-    .page_image img {
-        margin-left: 50px
-    }
-    .form_section_container {
-        margin-left: 50px;
-    }
+    
+    
 }
-@media only screen and (max-width: 1070px) {
+
+@media only screen and (max-width: 912px) {
+   
+   .title {
+    font-size: 1.3em;
+}
+   main{
+        flex-direction: column;
+    }
+
     .left_aside {
         flex-direction: column;
-        margin-left: 100px
-    }
-    .page_image img {
-        margin: 25px 0px 0px -30px;
-    }
-    .page_description h2 {
-        margin-left: 30px;
-    }
-}
-@media only screen and (max-width: 899px) {
+        margin: 30px auto
+    
+  }
+    
     .form_section_container {
-        margin-left: 20px;
-    }
-    form {
-        padding: 20px
-    }
+        margin: 20px auto;
+
 }
-@media only screen and (max-width: 800px) {
+
+    
+}
+
+@media only screen and (max-width: 540px) {
+      .title {
+    font-size: 1em;
+}
+    .logo img {
+    width: 100px;
+    
+}
+.page_image img {
+    display: none;
+
+
+}
+    }
+
+@media only screen and (max-width: 414px) {
+    footer{
+        margin-bottom: 0px
+    }
+    }
+
+
+@media only screen and (max-width: 375px) {
+    footer{
+        margin-top: 20px
+    }
+
+}
+
+@media only screen and (max-width: 280px) {
     .title {
-        padding: 25px;
-        font-size: 1em;
-    }
-    main {
-        flex-direction: column;
-        width: 100vw;
-    }
-    .page_description {
-        max-width: 100vw;
-    }
-    .page_image {
-        max-width: 100vw;
-    }
-    .form_section {
-        max-width: 100vw;
-    }
-    .page_description h2 {
-        margin: 50px 0px 0px 10px;
-        font-size: 2.5em;
-    }
-    .page_image img {
-        margin: 25px 0px 0px -50px;
-    }
-    .form_section_container {
-        margin: 20px 0px 100px 150px;
-        width: 350px;
-        height: 300px;
-    }
-    form {
-        padding: 40px;
-    }
-    footer div p {
-        font-size: 1em
-    }
+    font-size: 0.7em;
 }
-@media only screen and (max-width: 760px) {
-    .page_description h2 {
-        margin-left: 0px;
-        font-size: 2em;
+
+.page_description h2{
+        font-size:1.5em;
     }
-    .form_section_container {
-        margin-left: 100px;
-    }
+
+
+form {
+    height: 200px;
+    width: 200px;
+    padding: 20px;
+    
 }
-@media only screen and (max-width: 700px) {
-    .form_section_container {
-        margin-left: 50px;
-    }
-    .page_description h2 {
-        margin-left: -40px;
-        font-size: 2em;
-    }
-    .page_image img {
-        margin: 25px 0px 0px -80px;
-    }
+
+input {
+    
+    width: 200px;
+   
 }
-@media only screen and (max-width: 550px) {
-    .page_description h2 {
-        margin-left: -40px;
-        font-size: 1.5em;
-    }
+
+select {
+   
+    width: 200px;
+}
+button {
+    margin: 20px 20px;
+    
+}
+
 }
